@@ -117,6 +117,8 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   name: 'ContactView',
   data() {
@@ -130,6 +132,10 @@ export default {
       submitMessage: ''
     };
   },
+  mounted() {
+    // Initialize EmailJS - Replace with your public key from EmailJS
+    emailjs.init('YxTuQBSzMl6tQuD7K');
+  },
   methods: {
     async submitForm() {
       try {
@@ -142,18 +148,19 @@ export default {
           return;
         }
 
-        // Send to backend
-        const response = await fetch('http://localhost:5000/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(this.form)
-        });
+        // Send email using EmailJS
+        const response = await emailjs.send(
+          'service_9j5psto',  // Replace with your service ID
+          'QkXH2ucd5vOMUyrJqJknd',  // Replace with your template ID
+          {
+            to_email: 'deminschiiarcadie@gmail.com',
+            from_name: this.form.name,
+            from_email: this.form.email,
+            message: this.form.message
+          }
+        );
 
-        const data = await response.json();
-
-        if (response.ok) {
+        if (response.status === 200) {
           this.submitMessage = 'Message sent successfully! I\'ll get back to you soon.';
           this.form = { name: '', email: '', message: '' };
           
@@ -162,7 +169,7 @@ export default {
             this.submitMessage = '';
           }, 5000);
         } else {
-          this.submitMessage = data.error || 'Failed to send message. Please try again.';
+          this.submitMessage = 'Failed to send message. Please try again.';
         }
       } catch (error) {
         console.error('Error:', error);
