@@ -151,10 +151,10 @@ export default {
 
         // Send email using EmailJS send method
         const templateParams = {
-          to_email: 'deminschiiarcadie@gmail.com',
-          from_name: this.form.name,
-          from_email: this.form.email,
-          message: this.form.message
+          name: this.form.name,
+          email: this.form.email,
+          message: this.form.message,
+          time: new Date().toLocaleString()
         };
 
         const response = await emailjs.send(
