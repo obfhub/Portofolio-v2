@@ -152,7 +152,6 @@ export default {
         // Send email using EmailJS send method
         const templateParams = {
           name: this.form.name,
-          email: this.form.email,
           message: this.form.message,
           time: new Date().toLocaleString()
         };
@@ -160,8 +159,7 @@ export default {
         const response = await emailjs.send(
           'service_9j5psto',
           'QkXH2ucd5vOMUyrJqJknd',
-          templateParams,
-          'YxTuQBSzMl6tQuD7K'
+          templateParams
         );
 
         if (response.status === 200) {
