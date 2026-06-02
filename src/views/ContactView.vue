@@ -120,7 +120,7 @@
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 export default {
   name: 'ContactView',
@@ -136,7 +136,7 @@ export default {
     };
   },
   mounted() {
-    // Initialize EmailJS - Replace with your public key from EmailJS
+    // Initialize EmailJS with public key
     emailjs.init('YxTuQBSzMl6tQuD7K');
   },
   methods: {
