@@ -100,6 +100,9 @@
                 <textarea v-model="form.message" name="message" placeholder="Your message here..." rows="4" class="w-full px-4 py-2 bg-[#282828] border border-[#383838] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-200 transition resize-none" required></textarea>
               </div>
 
+              <!-- Hidden field for recipient email -->
+              <input type="hidden" name="to_email" value="deminschiiarcadie@gmail.com">
+
               <button type="submit" :disabled="isSubmitting" class="w-full px-4 py-2 bg-amber-200 text-black font-semibold rounded-lg hover:bg-amber-100 transition disabled:bg-gray-400 disabled:cursor-not-allowed">
                 {{ isSubmitting ? 'Sending...' : 'Send Message' }}
               </button>
