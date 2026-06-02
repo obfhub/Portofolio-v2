@@ -124,11 +124,12 @@ export default {
         class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
         <div class="flex justify-center">
           <img class="w-48 rounded-full mb-3 fadein-up"
-            src="/img/c.JPG" alt="Foto">
+            src="https://i1.sndcdn.com/avatars-000214125831-5q6tdw-t500x500.jpg" alt="Foto">
         </div>
         <div class="md:w-7/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Deminschii Arcadie. Welcome to my portfolio!
+            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Bagas Rakha Putra. I'm a web developer from Bogor, West Java. I
+            have 1 year of experience in back-end web development.
             I'm passionate about creating dynamic web experiences and innovative digital solutions.
             Check out my work across my various projects and initiatives.
           </p>

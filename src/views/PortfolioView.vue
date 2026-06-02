@@ -7,7 +7,7 @@ export default {
         {
           id: 1,
           name: 'Deminschii',
-          imageUrl: '/img/deminschii.png',
+          imageUrl: '/img/deminschii.webp',
           status: 'Professional photography and videography production specializing in weddings, events, and special moments. Offering comprehensive packages with unlimited photos, videography, and professional delivery services.',
           tech: 'VueJS 3, Tailwind',
           github: 'null',
@@ -16,7 +16,7 @@ export default {
         {
           id: 2,
           name: 'My Cabina',
-          imageUrl: '/img/mycabina.png',
+          imageUrl: '/img/mycabina.webp',
           status: 'Professional photo booth service with instant printing and personalized designs for events. Delivers unlimited photos, fun accessories, and memorable experiences for parties, weddings, and corporate events.',
           tech: 'Multiple Tech Stack',
           github: 'null',
@@ -25,7 +25,7 @@ export default {
         {
           id: 3,
           name: '360 Ignat',
-          imageUrl: '/img/360ignat.png',
+          imageUrl: '/img/360ignat.webp',
           status: '360° video platform capturing unlimited video content with special effects and personalized overlays for events. Features instant sharing, online galleries, and professional equipment with dedicated operators.',
           tech: 'Multiple Tech Stack',
           github: 'null',
