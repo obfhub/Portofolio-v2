@@ -84,24 +84,21 @@
           <div class="bg-[#1e1e1f] p-6 md:p-8 rounded-2xl border border-[#383838]">
             <h3 class="text-xl font-semibold text-amber-200 mb-4">Send a Message</h3>
             
-            <form ref="contactForm" @submit.prevent="submitForm" class="space-y-4">
+            <form @submit.prevent="submitForm" class="space-y-4">
               <div>
                 <label class="block text-sm font-medium text-white mb-2">Name</label>
-                <input v-model="form.name" name="from_name" type="text" placeholder="Your name" class="w-full px-4 py-2 bg-[#282828] border border-[#383838] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-200 transition" required>
+                <input v-model="form.name" type="text" placeholder="Your name" class="w-full px-4 py-2 bg-[#282828] border border-[#383838] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-200 transition" required>
               </div>
 
               <div>
                 <label class="block text-sm font-medium text-white mb-2">Email</label>
-                <input v-model="form.email" name="from_email" type="email" placeholder="your@email.com" class="w-full px-4 py-2 bg-[#282828] border border-[#383838] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-200 transition" required>
+                <input v-model="form.email" type="email" placeholder="your@email.com" class="w-full px-4 py-2 bg-[#282828] border border-[#383838] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-200 transition" required>
               </div>
 
               <div>
                 <label class="block text-sm font-medium text-white mb-2">Message</label>
-                <textarea v-model="form.message" name="message" placeholder="Your message here..." rows="4" class="w-full px-4 py-2 bg-[#282828] border border-[#383838] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-200 transition resize-none" required></textarea>
+                <textarea v-model="form.message" placeholder="Your message here..." rows="4" class="w-full px-4 py-2 bg-[#282828] border border-[#383838] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-amber-200 transition resize-none" required></textarea>
               </div>
-
-              <!-- Hidden field for recipient email -->
-              <input type="hidden" name="to_email" value="deminschiiarcadie@gmail.com">
 
               <button type="submit" :disabled="isSubmitting" class="w-full px-4 py-2 bg-amber-200 text-black font-semibold rounded-lg hover:bg-amber-100 transition disabled:bg-gray-400 disabled:cursor-not-allowed">
                 {{ isSubmitting ? 'Sending...' : 'Send Message' }}
@@ -145,11 +142,26 @@ export default {
         this.isSubmitting = true;
         this.submitMessage = '';
 
-        // Send email using EmailJS sendForm
-        const response = await emailjs.sendForm(
+        // Validate form
+        if (!this.form.name || !this.form.email || !this.form.message) {
+          this.submitMessage = 'Please fill in all fields.';
+          this.isSubmitting = false;
+          return;
+        }
+
+        // Send email using EmailJS send method
+        const templateParams = {
+          to_email: 'deminschiiarcadie@gmail.com',
+          from_name: this.form.name,
+          from_email: this.form.email,
+          message: this.form.message
+        };
+
+        const response = await emailjs.send(
           'service_9j5psto',
           'QkXH2ucd5vOMUyrJqJknd',
-          this.$refs.contactForm
+          templateParams,
+          'YxTuQBSzMl6tQuD7K'
         );
 
         if (response.status === 200) {
@@ -164,7 +176,7 @@ export default {
           this.submitMessage = 'Failed to send message. Please try again.';
         }
       } catch (error) {
-        console.error('Error:', error);
+        console.error('EmailJS Error:', error);
         this.submitMessage = 'Error sending message. Please try again or contact directly at deminschiiarcadie@gmail.com';
       } finally {
         this.isSubmitting = false;
