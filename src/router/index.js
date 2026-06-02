@@ -21,17 +21,11 @@ const routes = [
     meta: { title: 'Portfolio' }
   },
   {
-    path: '/blog',
-    name: 'blog',
-    component: () => import('../views/BlogView.vue'),
-    meta: { title: 'Blog' }
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/ContactView.vue'),
+    meta: { title: 'Contact' }
   },
-  {
-    path: '/read/:slug/:id',
-    name: 'articleDetail',
-    component: () => import('../views/ArticleView.vue'),
-    meta: { title: 'Blog' }
-  }
 ]
 
 const router = createRouter({

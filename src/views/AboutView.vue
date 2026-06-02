@@ -123,23 +123,20 @@ export default {
       <section
         class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
         <div class="flex justify-center">
-          <img class="w-9/12 rounded-full mb-3 fadein-up"
-            src="https://i1.sndcdn.com/avatars-000214125831-5q6tdw-t500x500.jpg" alt="Foto">
+          <img class="w-48 rounded-full mb-3 fadein-up"
+            src="/img/c.JPG" alt="Foto">
         </div>
         <div class="md:w-7/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Bagas Rakha Putra. I'm a web developer from Bogor, West Java. I
-            have 1 year of experience in back-end web development.
-            I really enjoy what I do right now, in my opinion, creating programs is not just a job, but also an art that
-            has
-            aesthetic value
+            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Deminschii Arcadie. Welcome to my portfolio!
+            I'm passionate about creating dynamic web experiences and innovative digital solutions.
+            Check out my work across my various projects and initiatives.
           </p>
           <p class="mb-3 fadein-left fadeins-2">
-            &nbsp; &nbsp; &nbsp; My job is to build your website to be functional and user-friendly yet still attractive.
-            In addition, I provide a personal touch to your product and ensure that the website catches attention and is
-            easy to use.
-            My goal is to convey your message and identity in the most creative way. If you are interested in hiring me,
-            please contact the listed contact.
+            &nbsp; &nbsp; &nbsp; Visit my websites to explore my work and services:
+            <a href="https://mycabina.com" target="_blank" class="text-amber-200 hover:text-amber-100">mycabina.com</a> | 
+            <a href="https://deminschii.com" target="_blank" class="text-amber-200 hover:text-amber-100">deminschii.com</a> | 
+            <a href="https://360ignat.com" target="_blank" class="text-amber-200 hover:text-amber-100">360ignat.com</a>
           </p>
         </div>
 
