@@ -128,10 +128,13 @@ export default {
         </div>
         <div class="md:w-7/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Hi everyone! My name is Bagas Rakha Putra. I'm a web developer from Bogor, West Java. I
-            have 1 year of experience in back-end web development.
-            I'm passionate about creating dynamic web experiences and innovative digital solutions.
-            Check out my work across my various projects and initiatives.
+            &nbsp; &nbsp; &nbsp; I’m Arcadie Deminschii, a developer and entrepreneur from Chișinău, Moldova, building
+            websites, SaaS platforms, automation systems, and server-based tools for real-world use. I like taking ideas
+            from the first concept to a finished product, working across frontend, backend, infrastructure, design, and
+            the small details that make everything feel smooth, useful, and ready to launch.
+          </p>
+          <p class="mb-3 md:mb-7 text-amber-200 font-semibold fadein-left fadeins-1">
+            Developer • Entrepreneur • Infrastructure Engineer • Creative Technologist
           </p>
           <p class="mb-3 fadein-left fadeins-2">
             &nbsp; &nbsp; &nbsp; Visit my websites to explore my work and services:
