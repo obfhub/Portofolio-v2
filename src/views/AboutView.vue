@@ -36,8 +36,8 @@ export default {
         },
         {
           id: 6,
-          name: 'Codeigniter',
-          imageUrl: 'https://cdn-peanutsquare.b-cdn.net/wp-content/uploads/2022/11/codeigniter-logo.png',
+          name: 'Next.js',
+          imageUrl: 'https://cdn.worldvectorlogo.com/logos/next-js.svg',
           status: 'Intermediate'
         },
         {
@@ -123,8 +123,8 @@ export default {
       <section
         class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
         <div class="flex justify-center">
-          <img class="w-48 rounded-full mb-3 fadein-up"
-            src="https://i1.sndcdn.com/avatars-000214125831-5q6tdw-t500x500.jpg" alt="Foto">
+          <img class="w-48 h-48 rounded-full object-cover object-top mb-3 fadein-up"
+            src="/img/c.webp" alt="Arcadie Deminschii">
         </div>
         <div class="md:w-7/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
@@ -135,12 +135,6 @@ export default {
           </p>
           <p class="mb-3 md:mb-7 text-amber-200 font-semibold fadein-left fadeins-1">
             Developer • Entrepreneur • Infrastructure Engineer • Creative Technologist
-          </p>
-          <p class="mb-3 fadein-left fadeins-2">
-            &nbsp; &nbsp; &nbsp; Visit my websites to explore my work and services:
-            <a href="https://mycabina.com" target="_blank" class="text-amber-200 hover:text-amber-100">mycabina.com</a> | 
-            <a href="https://deminschii.com" target="_blank" class="text-amber-200 hover:text-amber-100">deminschii.com</a> | 
-            <a href="https://360ignat.com" target="_blank" class="text-amber-200 hover:text-amber-100">360ignat.com</a>
           </p>
         </div>
 
