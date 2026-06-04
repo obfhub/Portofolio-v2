@@ -117,8 +117,6 @@
 </template>
 
 <script>
-import emailjs from '@emailjs/browser';
-
 export default {
   name: 'ContactView',
   data() {
@@ -131,10 +129,6 @@ export default {
       isSubmitting: false,
       submitMessage: ''
     };
-  },
-  mounted() {
-    // Initialize EmailJS with public key
-    emailjs.init('YxTuQBSzMl6tQuD7K');
   },
   methods: {
     async submitForm() {
@@ -149,20 +143,22 @@ export default {
           return;
         }
 
-        // Send email using EmailJS send method
-        const templateParams = {
+        const payload = {
           name: this.form.name,
+          email: this.form.email,
           message: this.form.message,
-          time: new Date().toLocaleString()
         };
 
-        const response = await emailjs.send(
-          'service_9j5psto',
-          'QkXH2ucd5vOMUyrJqJknd',
-          templateParams
-        );
+        const endpoint = process.env.VUE_APP_CONTACT_API || '/api/send-email';
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
 
-        if (response.status === 200) {
+        if (response.ok) {
           this.submitMessage = 'Message sent successfully! I\'ll get back to you soon.';
           this.form = { name: '', email: '', message: '' };
           
@@ -171,10 +167,11 @@ export default {
             this.submitMessage = '';
           }, 5000);
         } else {
-          this.submitMessage = 'Failed to send message. Please try again.';
+          const result = await response.json().catch(() => ({}));
+          this.submitMessage = result.error || 'Failed to send message. Please try again.';
         }
       } catch (error) {
-        console.error('EmailJS Error:', error);
+        console.error('Contact form error:', error);
         this.submitMessage = 'Error sending message. Please try again or contact directly at deminschiiarcadie@gmail.com';
       } finally {
         this.isSubmitting = false;
